@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -18,6 +21,7 @@ public class AddShot extends AppCompatActivity {
     String operator;
     String projectNumber;
     String projectStartTime;
+    TextView ShotNumberDisplay;
     int shotNumber;
 
     @Override
@@ -25,8 +29,13 @@ public class AddShot extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_shot);
 
+        // init shot number and displaying shot 0
+        ShotNumberDisplay = findViewById(R.id.ShotNumberDisplayView);
         shotNumber = 0;
+        ShotNumberDisplay.setText("Shot "+String.valueOf(shotNumber));
 
+
+        // action bar
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
@@ -50,15 +59,18 @@ public class AddShot extends AppCompatActivity {
         // start project time display
 
         TextView projectStartTimeDisplay = findViewById(R.id.projectStartTimeText);
-        projectStartTimeDisplay.setText(projectStartTime.toString());
+        projectStartTimeDisplay.setText("Project Start Time: "+projectStartTime.toString());
+
 
         // operator display
         TextView OperatorDisplayText = findViewById(R.id.OperatorDisplayTextView);
-        OperatorDisplayText.setText(operator);
+        OperatorDisplayText.setText("Operator: "+operator);
+
 
         // project number display
         TextView ProjectNumberDisplay = findViewById(R.id.ProjectNumberDisplayTextView);
-        ProjectNumberDisplay.setText(projectNumber);
+        ProjectNumberDisplay.setText("Project Number: "+projectNumber);
+
 
         // TIME DISPLAY REC BUTTON
 
@@ -74,11 +86,29 @@ public class AddShot extends AppCompatActivity {
 
             TextView textView = findViewById(R.id.ShotTimeDisplay);
             shot_time.toString().trim();
-            textView.setText(shot_time);
+            textView.setText("Last recorded shot time: "+shot_time);
 
             // ADDING TO DATABASE INFO
             shotNumber += 1;
+            ShotNumberDisplay.setText("Shot "+String.valueOf(shotNumber));
             db.addShot(operator,projectNumber,String.valueOf(shotNumber),shot_time);
+        });
+
+        // deleting last entry in database button work
+
+        Button DeleteLastEntry = findViewById(R.id.deleteDBEntryButton);
+        DeleteLastEntry.setOnLongClickListener(view -> {
+            // updating shot number
+            /*if(shotNumber == 0){
+                Toast.makeText(this,"No shots taken in this project!", Toast.LENGTH_SHORT).show();
+                return true;
+            }*/
+            shotNumber -= 1;
+            ShotNumberDisplay.setText("Shot "+String.valueOf(shotNumber));
+            db.deletelastEntry();
+            Toast.makeText(this,"removed last entry from database!", Toast.LENGTH_SHORT).show();
+            return true;
+
         });
 
 

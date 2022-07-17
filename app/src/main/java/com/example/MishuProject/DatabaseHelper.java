@@ -71,5 +71,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void deletelastEntry(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+TABLE_NAME+" WHERE _id = (SELECT MAX(_id) FROM "+TABLE_NAME+ ");");
+    }
+
 
 }
