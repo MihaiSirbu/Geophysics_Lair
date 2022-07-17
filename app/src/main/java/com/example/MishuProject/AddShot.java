@@ -99,10 +99,10 @@ public class AddShot extends AppCompatActivity {
         Button DeleteLastEntry = findViewById(R.id.deleteDBEntryButton);
         DeleteLastEntry.setOnLongClickListener(view -> {
             // updating shot number
-            /*if(shotNumber == 0){
+            if(shotNumber == 0){
                 Toast.makeText(this,"No shots taken in this project!", Toast.LENGTH_SHORT).show();
                 return true;
-            }*/
+            }
             shotNumber -= 1;
             ShotNumberDisplay.setText("Shot "+String.valueOf(shotNumber));
             db.deletelastEntry();
