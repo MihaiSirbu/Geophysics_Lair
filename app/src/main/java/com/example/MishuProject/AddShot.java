@@ -49,8 +49,16 @@ public class AddShot extends AppCompatActivity {
 
         // start project time display
 
-        TextView projectStartTime = findViewById(R.id.projectStartTimeText);
-        projectStartTime.setText(projectStartTime.toString());
+        TextView projectStartTimeDisplay = findViewById(R.id.projectStartTimeText);
+        projectStartTimeDisplay.setText(projectStartTime.toString());
+
+        // operator display
+        TextView OperatorDisplayText = findViewById(R.id.OperatorDisplayTextView);
+        OperatorDisplayText.setText(operator);
+
+        // project number display
+        TextView ProjectNumberDisplay = findViewById(R.id.ProjectNumberDisplayTextView);
+        ProjectNumberDisplay.setText(projectNumber);
 
         // TIME DISPLAY REC BUTTON
 

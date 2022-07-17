@@ -63,13 +63,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     // GO TO NEXT ACTIVITY
         Button Shot_Activity_Button = findViewById(R.id.addShotButton);
-        Shot_Activity_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNextActivity();
-
-            }
-        });
+        Shot_Activity_Button.setOnClickListener(v -> openNextActivity());
 
 
     }
