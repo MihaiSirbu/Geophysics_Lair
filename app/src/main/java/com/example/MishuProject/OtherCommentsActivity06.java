@@ -1,4 +1,4 @@
-package com.example.try1;
+package com.example.MishuProject;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,18 +8,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TerenActivity03 extends AppCompatActivity {
+public class OtherCommentsActivity06 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teren03);
+        setContentView(R.layout.activity_other_comments06);
 
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
-            actionBar.setTitle("Teren Information");
+            actionBar.setTitle("Additional Comments");
         }
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         // GOING TO NEXT ACTIVITY
 
@@ -38,7 +40,7 @@ public class TerenActivity03 extends AppCompatActivity {
     }
     // next activity opener
     public void openNextActivity(){
-        Intent intent = new Intent(TerenActivity03.this,ZgomotActivity04.class);
+        Intent intent = new Intent(OtherCommentsActivity06.this,MainActivity.class);
         startActivity(intent);
     }
 }

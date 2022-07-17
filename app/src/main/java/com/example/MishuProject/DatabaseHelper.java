@@ -1,10 +1,9 @@
-package com.example.try1;
+package com.example.MishuProject;
 
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.BaseColumns;
 import android.content.Context;
 import android.widget.Toast;
 

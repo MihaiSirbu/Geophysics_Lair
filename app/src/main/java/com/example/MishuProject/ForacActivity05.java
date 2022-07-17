@@ -1,4 +1,4 @@
-package com.example.try1;
+package com.example.MishuProject;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,20 +8,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ZgomotActivity04 extends AppCompatActivity {
+public class ForacActivity05 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zgomot04);
+        setContentView(R.layout.activity_forac05);
 
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
-            actionBar.setTitle("Zgomot");
+            actionBar.setTitle("Forac");
         }
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        //
 
 
         // GOING TO NEXT ACTIVITY
@@ -41,7 +42,7 @@ public class ZgomotActivity04 extends AppCompatActivity {
     }
     // next activity opener
     public void openNextActivity(){
-        Intent intent = new Intent(ZgomotActivity04.this,ForacActivity05.class);
+        Intent intent = new Intent(ForacActivity05.this,OtherCommentsActivity06.class);
         startActivity(intent);
     }
 

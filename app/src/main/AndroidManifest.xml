@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.try1">
+    package="com.example.MishuProject">
 
     <application
         android:allowBackup="true"
@@ -14,27 +14,27 @@
         android:theme="@style/Theme.Try1"
         tools:targetApi="31">
         <activity
-            android:name=".OtherCommentsActivity06"
+            android:name="com.example.MishuProject.OtherCommentsActivity06"
             android:exported="false"
-            android:parentActivityName=".ForacActivity05"/>
+            android:parentActivityName="com.example.MishuProject.ForacActivity05"/>
         <activity
-            android:name=".ForacActivity05"
+            android:name="com.example.MishuProject.ForacActivity05"
             android:exported="false"
-            android:parentActivityName=".ZgomotActivity04"/>
+            android:parentActivityName="com.example.MishuProject.ZgomotActivity04"/>
         <activity
-            android:name=".ZgomotActivity04"
+            android:name="com.example.MishuProject.ZgomotActivity04"
             android:exported="false"
-            android:parentActivityName=".TerenActivity03"/>
+            android:parentActivityName="com.example.MishuProject.TerenActivity03"/>
         <activity
-            android:name=".TerenActivity03"
+            android:name="com.example.MishuProject.TerenActivity03"
             android:exported="false" />
         <activity
-            android:name=".AddShot"
+            android:name="com.example.MishuProject.AddShot"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.example.MishuProject.MainActivity"
             />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.MishuProject.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.try1;
+package com.example.MishuProject;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,22 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ForacActivity05 extends AppCompatActivity {
+public class TerenActivity03 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forac05);
+        setContentView(R.layout.activity_teren03);
 
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
-            actionBar.setTitle("Forac");
+            actionBar.setTitle("Teren Information");
         }
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
-        //
-
 
         // GOING TO NEXT ACTIVITY
 
@@ -42,8 +38,7 @@ public class ForacActivity05 extends AppCompatActivity {
     }
     // next activity opener
     public void openNextActivity(){
-        Intent intent = new Intent(ForacActivity05.this,OtherCommentsActivity06.class);
+        Intent intent = new Intent(TerenActivity03.this,ZgomotActivity04.class);
         startActivity(intent);
     }
-
 }
