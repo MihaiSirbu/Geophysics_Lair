@@ -35,15 +35,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
 
-        // TIME DISPLAY
-        TextView timedisplayWidget = findViewById(R.id.TimeTextView);
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                // display your time here...
-                String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-                timedisplayWidget.setText(currentDateTimeString);
-            }
-        }, 1000); // here 1 seconds to refresh time after 1 seconds
 
     // PROJECT NUMBER
 
