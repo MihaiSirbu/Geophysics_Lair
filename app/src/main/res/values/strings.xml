@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">try1</string>
+    <string name="button011">mybutton</string>
+    <string name="OperatorText">Operator</string>
+
+    <string-array name="OperatorNames">
+        <item>John Cena</item>
+        <item>Michael Jackson</item>
+        <item>Bruce Lee</item>
+        <item>Monkey Pa</item>
+        <item>Mister Bear</item>
+    </string-array>
+
+</resources>
