@@ -3,6 +3,7 @@
     <string name="button011">mybutton</string>
     <string name="OperatorText">Operator</string>
 
+    <!--ACTIVITY 1 - OPERATOR INFORMATION ARRAY FOR DROPDOWN MENUS-->
     <string-array name="OperatorNames">
         <item>John Cena</item>
         <item>Michael Jackson</item>
@@ -10,5 +11,60 @@
         <item>Monkey Pa</item>
         <item>Mister Bear</item>
     </string-array>
+
+    <!--ACTIVITY 1 - END OF OPERATOR INFORMATION ARRAYS FOR DROPDOWN MENUS-->
+
+
+    <!--ACTIVITY 3 - TEREN INFORMATION ARRAYS FOR DROPDOWN MENUS-->
+    <string-array name="Sol">
+        <item>Uscat</item>
+        <item>Michael Jackson</item>
+        <item>Bruce Lee</item>
+        <item>Monkey Pa</item>
+        <item>Mister Bear</item>
+    </string-array>
+
+    <string-array name="Cultura">
+        <item>Uscat</item>
+        <item>Michael Jackson</item>
+        <item>Bruce Lee</item>
+        <item>Monkey Pa</item>
+        <item>Mister Bear</item>
+    </string-array>
+
+    <string-array name="TipSol">
+        <item>Uscat</item>
+        <item>Michael Jackson</item>
+        <item>Bruce Lee</item>
+        <item>Monkey Pa</item>
+        <item>Mister Bear</item>
+    </string-array>
+
+    <string-array name="Suprafata">
+        <item>Uscat</item>
+        <item>Michael Jackson</item>
+        <item>Bruce Lee</item>
+        <item>Monkey Pa</item>
+        <item>Mister Bear</item>
+    </string-array>
+
+    <string-array name="Uscat">
+        <item>Uscat</item>
+        <item>Michael Jackson</item>
+        <item>Bruce Lee</item>
+        <item>Monkey Pa</item>
+        <item>Mister Bear</item>
+    </string-array>
+
+    <string-array name="Priza">
+        <item>Uscat</item>
+        <item>Michael Jackson</item>
+        <item>Bruce Lee</item>
+        <item>Monkey Pa</item>
+        <item>Mister Bear</item>
+    </string-array>
+
+
+    <!--END OF ACTIVITY 3 - TEREN INFORMATION ARRAYS FOR DROPDOWN MENUS-->
 
 </resources>

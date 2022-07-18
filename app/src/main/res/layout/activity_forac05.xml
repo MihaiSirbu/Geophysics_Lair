@@ -49,12 +49,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PichetID">
+        app:layout_constraintTop_toBottomOf="@+id/PichetID"
+        app:counterEnabled="true"
+        app:suffixText="meters"
+        app:counterMaxLength="4">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/DistanceIDTEXT"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLength="4"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -67,12 +71,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LocalizatCheckbox">
+        app:layout_constraintTop_toBottomOf="@+id/LocalizatCheckbox"
+        app:counterEnabled="true"
+        app:counterMaxLength="4">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PichetIDTEXT"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLength="4"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 

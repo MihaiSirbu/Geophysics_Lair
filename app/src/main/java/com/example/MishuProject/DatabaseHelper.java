@@ -22,6 +22,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_PROFILE = "profile";
     private static final String COLUMN_SHOTNUMBER = "shotnumber";
     private static final String COLUMN_TIME = "time";
+    private static final String COLUMN_STARTTIME="profileStartTime";
+
+
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -39,7 +42,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_OPERATOR + " TEXT, " +
                 COLUMN_PROFILE + " TEXT, " +
                 COLUMN_SHOTNUMBER + " TEXT, " +
-                COLUMN_TIME + " TEXT);";
+                COLUMN_TIME + " TEXT, "+
+                COLUMN_STARTTIME + " TEXT);";
         db.execSQL(query);
 
     }
@@ -51,7 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
     //shotNumber string
-    public int addShot(String operator, String profile, String shotNumber, String time){
+    public int addShot(String operator, String profile, String shotNumber, String time,String profileST){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -59,6 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_PROFILE,profile);
         contentValues.put(COLUMN_SHOTNUMBER,shotNumber);
         contentValues.put(COLUMN_TIME,time);
+        contentValues.put(COLUMN_STARTTIME,profileST);
         long result = db.insert(TABLE_NAME,null,contentValues);
         if(result == -1){
             Toast.makeText(context,"Failed to add to db", Toast.LENGTH_SHORT).show();

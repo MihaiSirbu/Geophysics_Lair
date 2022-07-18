@@ -141,7 +141,7 @@ public class AddShot extends AppCompatActivity {
             // ADDING TO DATABASE INFO
             shotNumber += 1;
             ShotNumberDisplay.setText("Shot "+String.valueOf(shotNumber));
-            db.addShot(operator,projectNumber,String.valueOf(shotNumber),shot_time);
+            db.addShot(operator,projectNumber,String.valueOf(shotNumber),shot_time,projectStartTime.toString());
         });
 
         // deleting last entry in database button work
