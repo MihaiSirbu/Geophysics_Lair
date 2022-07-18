@@ -7,11 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,8 +40,9 @@ public class AddShot extends AppCompatActivity {
     String projectNumber;
     String projectStartTime;
     TextView ShotNumberDisplay;
-    TextView LatitudeDisplay;
-    TextView LongitudeDisplay;
+    /*TextView LatitudeDisplay;
+    TextView LongitudeDisplay;*/
+    LocationManager mylocation;
 
     int shotNumber;
 
@@ -53,6 +57,10 @@ public class AddShot extends AppCompatActivity {
         ShotNumberDisplay = findViewById(R.id.ShotNumberDisplayView);
         shotNumber = 0;
         ShotNumberDisplay.setText("Shot "+String.valueOf(shotNumber));
+
+
+        LocationManager mylocation = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        LocationProvider provider = mylocation.getProvider(LocationManager.GPS_PROVIDER);
 
 
         // action bar
@@ -71,9 +79,9 @@ public class AddShot extends AppCompatActivity {
             projectNumber = extras.getString("projectKEY");
             projectStartTime = extras.getString("timeStartKEY");
         }
-
+/*
         LatitudeDisplay = findViewById(R.id.LatituteTxtView);
-        LongitudeDisplay = findViewById(R.id.LongitudeTxtView);
+        LongitudeDisplay = findViewById(R.id.LongitudeTxtView);*/
 
         // GETTING GPS COORDINATES
 
@@ -119,7 +127,7 @@ public class AddShot extends AppCompatActivity {
             textView.setText("Last recorded shot time: "+shot_time);
 
             // GPS STUFF
-
+/*
             // check permissions
             if(ActivityCompat.checkSelfPermission(AddShot.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                 // permission is granted
@@ -128,7 +136,7 @@ public class AddShot extends AppCompatActivity {
             else{
                 // when permission isn't granted
                 ActivityCompat.requestPermissions(AddShot.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
-            }
+            }*/
 
             // ADDING TO DATABASE INFO
             shotNumber += 1;
@@ -168,7 +176,7 @@ public class AddShot extends AppCompatActivity {
             }
         });
     }
-
+/*
     private void getLocation() {
         fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
             @Override
@@ -191,5 +199,5 @@ public class AddShot extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 }
