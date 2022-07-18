@@ -19,11 +19,23 @@
         app:srcCompat="@drawable/next_btn_img" />
 
     <TextView
+        android:id="@+id/projectStartTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:gravity="left"
+        android:text="TextView"
+        android:textAlignment="gravity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProjectNumberDisplayTextView" />
+
+    <TextView
         android:id="@+id/OperatorDisplayTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="28dp"
         android:gravity="left"
         android:text="TextView"
         android:textAlignment="gravity"
@@ -35,24 +47,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="52dp"
         android:gravity="left"
         android:text="TextView"
         android:textAlignment="gravity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/OperatorDisplayTextView" />
-
-    <TextView
-        android:id="@+id/projectStartTimeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
-        android:gravity="left"
-        android:text="TextView"
-        android:textAlignment="gravity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProjectNumberDisplayTextView" />
 
     <Button
         android:id="@+id/RecButton"
@@ -97,6 +97,28 @@
         app:layout_constraintEnd_toStartOf="@+id/nextButton"
         app:layout_constraintHorizontal_bias="0.284"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/LatituteTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShotTimeDisplay" />
+
+    <TextView
+        android:id="@+id/LongitudeTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LatituteTxtView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,20 +1,35 @@
 package com.example.MishuProject;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+
 import org.w3c.dom.Text;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
 
 public class AddShot extends AppCompatActivity {
 
@@ -22,7 +37,12 @@ public class AddShot extends AppCompatActivity {
     String projectNumber;
     String projectStartTime;
     TextView ShotNumberDisplay;
+    TextView LatitudeDisplay;
+    TextView LongitudeDisplay;
+
     int shotNumber;
+
+    FusedLocationProviderClient fusedLocationProviderClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +71,16 @@ public class AddShot extends AppCompatActivity {
             projectNumber = extras.getString("projectKEY");
             projectStartTime = extras.getString("timeStartKEY");
         }
+
+        LatitudeDisplay = findViewById(R.id.LatituteTxtView);
+        LongitudeDisplay = findViewById(R.id.LongitudeTxtView);
+
+        // GETTING GPS COORDINATES
+
+        // initializing fusedlocationproviderclient
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+
 
         // DATABASE
 
@@ -88,6 +118,18 @@ public class AddShot extends AppCompatActivity {
             shot_time.toString().trim();
             textView.setText("Last recorded shot time: "+shot_time);
 
+            // GPS STUFF
+
+            // check permissions
+            if(ActivityCompat.checkSelfPermission(AddShot.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+                // permission is granted
+                getLocation();
+            }
+            else{
+                // when permission isn't granted
+                ActivityCompat.requestPermissions(AddShot.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
+            }
+
             // ADDING TO DATABASE INFO
             shotNumber += 1;
             ShotNumberDisplay.setText("Shot "+String.valueOf(shotNumber));
@@ -123,6 +165,30 @@ public class AddShot extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2page = new Intent(AddShot.this,TerenActivity03.class);
                 startActivity(intent2page);
+            }
+        });
+    }
+
+    private void getLocation() {
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                // init location
+                Location loc = task.getResult();
+                if(loc != null){
+                    // init geocoder
+                    Geocoder geocoder = new Geocoder(AddShot.this, Locale.getDefault());
+                    // init address list
+                    try {
+                        List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),loc.getLongitude(),1);
+
+                        LatitudeDisplay.setText("Latitude: "+ addresses.get(0).getLatitude());
+                        LongitudeDisplay.setText("Longitude: "+ addresses.get(0).getLongitude());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
             }
         });
     }
