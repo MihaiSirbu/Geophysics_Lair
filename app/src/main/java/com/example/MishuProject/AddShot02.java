@@ -57,7 +57,7 @@ public class AddShot02 extends AppCompatActivity {
         }
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        // RETREIVING EXTRAS FROM PREVIOUS ACTIVITY
+        // RETRIEVING EXTRAS FROM PREVIOUS ACTIVITY
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {

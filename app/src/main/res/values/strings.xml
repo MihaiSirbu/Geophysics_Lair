@@ -24,7 +24,8 @@
         <item>necultivat</item>
         <item>lastaris</item>
         <item>padure</item>
-        <item>mlaastina</item>
+        <item>mlastina</item>
+        <item>Other</item>
     </string-array>
 
     <string-array name="cultura">
@@ -36,6 +37,7 @@
         <item>iarba mica</item>
         <item>iarba inalta</item>
         <item>arbusti mici/boscheti</item>
+        <item>Other</item>
     </string-array>
 
     <string-array name="sol">

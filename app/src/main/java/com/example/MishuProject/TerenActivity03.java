@@ -6,18 +6,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class TerenActivity03 extends AppCompatActivity {
+public class TerenActivity03 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private String projectStartTime;
     private String FolosintaTeren;
     private String cultura;
     private String tipSol;
     private String suprafata;
-    private String uscat;
+    private String umed;
     private String priza;
+
+    private TextView elevationChangeTxtView;
+    private EditText elevationmetersEditText;
+
+
+    Spinner dropdownTeren;
+
+    Spinner dropdownCultura;
+
+    Spinner dropdownSuprafata;
 
     String[] terenData;
 
@@ -38,20 +53,38 @@ public class TerenActivity03 extends AppCompatActivity {
             projectStartTime = extras.getString("timeStartKEY");
         }
 
+        // setting up textview and edittext
+
+        elevationChangeTxtView = findViewById(R.id.textViewifSuprafataSelected);
+        elevationmetersEditText = findViewById(R.id.addMetersTExt);
+
+
+
         // setting up spinners
 
-        //get the spinner from the xml.
-        Spinner dropdownTeren = findViewById(R.id.spinnerfolosintateren);
+        dropdownTeren = findViewById(R.id.spinnerfolosintateren);
         ArrayAdapter<CharSequence> adapterteren = ArrayAdapter.createFromResource(this,R.array.folosintaTeren, android.R.layout.simple_spinner_item);
         dropdownTeren.setAdapter(adapterteren);
 
-        Spinner dropdownCultura = findViewById(R.id.spinnerfolosintateren);
+        dropdownCultura = findViewById(R.id.spinnertipCultura);
         ArrayAdapter<CharSequence> adapterCultura = ArrayAdapter.createFromResource(this,R.array.cultura, android.R.layout.simple_spinner_item);
         dropdownCultura.setAdapter(adapterCultura);
 
-        Spinner downdownSuprafata = findViewById(R.id.spinnerfolosintateren);
+        dropdownSuprafata = findViewById(R.id.spinnerSuprafata);
         ArrayAdapter<CharSequence> adapterSuprafata = ArrayAdapter.createFromResource(this,R.array.Suprafata, android.R.layout.simple_spinner_item);
-        downdownSuprafata.setAdapter(adapterSuprafata);
+        dropdownSuprafata.setAdapter(adapterSuprafata);
+
+        dropdownTeren.setOnItemSelectedListener(this);
+        dropdownCultura.setOnItemSelectedListener(this);
+        dropdownSuprafata.setOnItemSelectedListener(this);
+
+        // end of spinners
+
+        // radio groups and buttons
+
+
+
+
 
 
 
@@ -88,10 +121,102 @@ public class TerenActivity03 extends AppCompatActivity {
     // next activity opener
     public void openNextActivity(){
         Intent intent = new Intent(TerenActivity03.this,ZgomotActivity04.class);
-        terenData = new String[] {FolosintaTeren, cultura,tipSol,suprafata,uscat,priza};
+        FolosintaTeren = dropdownTeren.getSelectedItem().toString();
+        cultura = dropdownCultura.getSelectedItem().toString();
+        suprafata = dropdownSuprafata.getSelectedItem().toString();
+        terenData = new String[] {FolosintaTeren, cultura,tipSol,suprafata,umed,priza};
 
         intent.putExtra("timeStartKEY",projectStartTime);
         intent.putExtra("terenData", terenData);
         startActivity(intent);
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String text = adapterView.getItemAtPosition(i).toString();
+        if(text.equals("schimbare de elevatie")){
+            elevationChangeTxtView.setVisibility(View.VISIBLE);
+            elevationmetersEditText.setVisibility(View.VISIBLE);
+
+        }
+        else{
+            elevationChangeTxtView.setVisibility(View.INVISIBLE);
+            elevationmetersEditText.setVisibility(View.INVISIBLE);
+
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    public void onRadioButtonClickedTIPSOL(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.afanat:
+                if (checked)
+                    tipSol = "afanat";
+                    break;
+            case R.id.semiAfanat:
+                if (checked)
+                    tipSol = "semi-afanat";
+                    break;
+            case R.id.tare:
+                if (checked)
+                    tipSol = "tare";
+                    break;
+        }
+    }
+
+    public void onRadioButtonClickedUmed(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.uscatButton:
+                if (checked)
+                    umed = "uscat";
+                break;
+            case R.id.umedButton:
+                if (checked)
+                    umed = "umed";
+                break;
+
+        }
+    }
+
+    public void onRadioButtonClickedPriza(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.foartebunbutton:
+                if (checked)
+                    priza = "foarte buna";
+                break;
+            case R.id.bunbutton:
+                if (checked)
+                    priza = "buna";
+                break;
+            case R.id.mediumbutton:
+                if (checked)
+                    priza = "medie";
+                break;
+            case R.id.slabbutton:
+                if (checked)
+                    priza = "slaba";
+                break;
+            case R.id.foarteproastbutton:
+                if (checked)
+                    priza = "foarte proasta";
+                break;
+        }
     }
 }
