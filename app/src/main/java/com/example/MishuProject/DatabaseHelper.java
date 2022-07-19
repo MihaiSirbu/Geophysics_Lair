@@ -16,14 +16,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ProjectDatabaseTest";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String TABLE_NAME = "table1";
-    private static final String COLUMN_ID = "_id";
-    private static final String COLUMN_OPERATOR = "operator";
-    private static final String COLUMN_PROFILE = "profile";
-    private static final String COLUMN_SHOTNUMBER = "shotnumber";
-    private static final String COLUMN_TIME = "time";
-    private static final String COLUMN_STARTTIME="profileStartTime";
-
 
 
 
@@ -37,20 +29,66 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_OPERATOR + " TEXT, " +
-                COLUMN_PROFILE + " TEXT, " +
-                COLUMN_SHOTNUMBER + " TEXT, " +
-                COLUMN_TIME + " TEXT, "+
-                COLUMN_STARTTIME + " TEXT);";
-        db.execSQL(query);
+
+        // SHOTS TABLE
+        String queryTableShots = "CREATE TABLE " + DatabaseContract.ShotTABLE.TABLE_NAME + " (" +
+                DatabaseContract.ShotTABLE.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                DatabaseContract.ShotTABLE.COLUMN_OPERATOR + " TEXT, " +
+                DatabaseContract.ShotTABLE.COLUMN_PROFILE + " TEXT, " +
+                DatabaseContract.ShotTABLE.COLUMN_STARTTIME + " TEXT, " +
+
+                // to remove as comment when LATITUDE AND LONGITUDE GETS IMPLEMENTED
+
+                //DatabaseContract.ShotTABLE.COLUMN_LATITUDE + " TEXT, "+
+                //DatabaseContract.ShotTABLE.COLUMN_LONGITUDE + " TEXT, "+
+                DatabaseContract.ShotTABLE.COLUMN_SHOTNUMBER + " TEXT, "+
+                DatabaseContract.ShotTABLE.COLUMN_TIME + " TEXT);";
+        db.execSQL(queryTableShots);
+
+
+
+
+
+        // FORMS TABLE
+        String queryTableForms = "CREATE TABLE " +
+                DatabaseContract.FormsTABLE.TABLE_NAME + " ("+
+                DatabaseContract.FormsTABLE.COLUMN_OPERATOR + " TEXT, " +
+                DatabaseContract.FormsTABLE.COLUMN_PROFILE + " TEXT, " +
+                DatabaseContract.FormsTABLE.COLUMN_STARTTIME + " TEXT, " +
+
+                // SOL TEREN
+
+                DatabaseContract.FormsTABLE.COLUMN_TIP + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_CULTURA + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_TIP_SOL + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_USCAT + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_PRIZA + " TEXT, "+
+
+                        // ZGOMOT
+                DatabaseContract.FormsTABLE.COLUMN_VANT + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_TRAFIC + " TEXT, "+
+                        // FORAJ
+                DatabaseContract.FormsTABLE.COLUMN_LOCALIZAT + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_PICHET + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_DISTANCE + " TEXT, "+
+                        // OTHER
+                DatabaseContract.FormsTABLE.COLUMN_OTHER_COMMENTS + " TEXT);";
+
+
+
+
+
+
+
+        db.execSQL(queryTableForms);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ DatabaseContract.ShotTABLE.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ DatabaseContract.FormsTABLE.TABLE_NAME);
         onCreate(db);
 
     }
@@ -59,12 +97,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(COLUMN_OPERATOR,operator);
-        contentValues.put(COLUMN_PROFILE,profile);
-        contentValues.put(COLUMN_SHOTNUMBER,shotNumber);
-        contentValues.put(COLUMN_TIME,time);
-        contentValues.put(COLUMN_STARTTIME,profileST);
-        long result = db.insert(TABLE_NAME,null,contentValues);
+        contentValues.put(DatabaseContract.ShotTABLE.COLUMN_OPERATOR,operator);
+        contentValues.put(DatabaseContract.ShotTABLE.COLUMN_PROFILE,profile);
+        contentValues.put(DatabaseContract.ShotTABLE.COLUMN_SHOTNUMBER,shotNumber);
+        contentValues.put(DatabaseContract.ShotTABLE.COLUMN_TIME,time);
+        contentValues.put(DatabaseContract.ShotTABLE.COLUMN_STARTTIME,profileST);
+
+        //contentValues.put(DatabaseContract.ShotTABLE.COLUMN_LATITUDE,profileST);
+        //contentValues.put(DatabaseContract.ShotTABLE.COLUMN_LONGITUDE,profileST);
+        long result = db.insert(DatabaseContract.ShotTABLE.TABLE_NAME,null,contentValues);
+        if(result == -1){
+            Toast.makeText(context,"Failed to add to db", Toast.LENGTH_SHORT).show();
+            return -1;
+        }
+        else{
+            Toast.makeText(context,"added to db successfully", Toast.LENGTH_SHORT).show();
+            return 1;
+        }
+
+    }
+
+    public int addForms(String operator, String profile,String profileST,String tip, String cultura, String tipSol, String suprafata, String uscat, String priza, String vant, String trafic, String localizat, String pichet, String distance, String otherComments){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_OPERATOR,operator);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PROFILE,profile);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_STARTTIME,profileST);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TIP,tip);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_CULTURA,cultura);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TIP_SOL,tipSol);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA,suprafata);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_USCAT,uscat);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PRIZA,priza);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT,vant);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TRAFIC,trafic);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_LOCALIZAT,localizat);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PICHET,pichet);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_DISTANCE,distance);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_OTHER_COMMENTS,otherComments);
+        long result = db.insert(DatabaseContract.FormsTABLE.TABLE_NAME,null,contentValues);
         if(result == -1){
             Toast.makeText(context,"Failed to add to db", Toast.LENGTH_SHORT).show();
             return -1;
@@ -78,7 +150,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void deletelastEntry(){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM "+TABLE_NAME+" WHERE _id = (SELECT MAX(_id) FROM "+TABLE_NAME+ ");");
+        db.execSQL("DELETE FROM "+DatabaseContract.ShotTABLE.TABLE_NAME+" WHERE _id = (SELECT MAX(_id) FROM "+DatabaseContract.ShotTABLE.TABLE_NAME+ ");");
     }
 
 
