@@ -32,7 +32,7 @@ public class ZgomotActivity04 extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
-        // retrieving projhect start time
+        // retrieving project start time
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             projectStartTime = extras.getString("timeStartKEY");
