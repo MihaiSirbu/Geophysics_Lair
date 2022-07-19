@@ -33,12 +33,12 @@
             android:name="com.example.MishuProject.TerenActivity03"
             android:exported="false" />
         <activity
-            android:name="com.example.MishuProject.AddShot"
+            android:name="com.example.MishuProject.AddShot02"
             android:exported="false"
-            android:parentActivityName="com.example.MishuProject.MainActivity"
+            android:parentActivityName="com.example.MishuProject.MainActivity01"
             />
         <activity
-            android:name="com.example.MishuProject.MainActivity"
+            android:name="com.example.MishuProject.MainActivity01"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

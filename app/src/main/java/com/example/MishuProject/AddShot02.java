@@ -1,18 +1,11 @@
 package com.example.MishuProject;
 
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.Bundle;
@@ -23,18 +16,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 
-import org.w3c.dom.Text;
-
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
-import java.util.Locale;
 
-public class AddShot extends AppCompatActivity {
+public class AddShot02 extends AppCompatActivity {
 
     String operator;
     String projectNumber;
@@ -51,7 +37,7 @@ public class AddShot extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_shot);
+        setContentView(R.layout.activity_add_shot02);
 
         // init shot number and displaying shot 0
         ShotNumberDisplay = findViewById(R.id.ShotNumberDisplayView);
@@ -67,7 +53,7 @@ public class AddShot extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
-            actionBar.setTitle("AddShot Page");
+            actionBar.setTitle("AddShot02 Page");
         }
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -92,7 +78,7 @@ public class AddShot extends AppCompatActivity {
 
         // DATABASE
 
-        DatabaseHelper db = new DatabaseHelper(AddShot.this);
+        DatabaseHelper db = new DatabaseHelper(AddShot02.this);
 
         // start project time display
 
@@ -129,13 +115,13 @@ public class AddShot extends AppCompatActivity {
             // GPS STUFF
 /*
             // check permissions
-            if(ActivityCompat.checkSelfPermission(AddShot.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+            if(ActivityCompat.checkSelfPermission(AddShot02.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                 // permission is granted
                 getLocation();
             }
             else{
                 // when permission isn't granted
-                ActivityCompat.requestPermissions(AddShot.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
+                ActivityCompat.requestPermissions(AddShot02.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
             }*/
 
             // ADDING TO DATABASE INFO
@@ -171,7 +157,7 @@ public class AddShot extends AppCompatActivity {
         TerenActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2page = new Intent(AddShot.this,TerenActivity03.class);
+                Intent intent2page = new Intent(AddShot02.this,TerenActivity03.class);
                 intent2page.putExtra("timeStartKEY",projectStartTime);
                 startActivity(intent2page);
             }
@@ -186,7 +172,7 @@ public class AddShot extends AppCompatActivity {
                 Location loc = task.getResult();
                 if(loc != null){
                     // init geocoder
-                    Geocoder geocoder = new Geocoder(AddShot.this, Locale.getDefault());
+                    Geocoder geocoder = new Geocoder(AddShot02.this, Locale.getDefault());
                     // init address list
                     try {
                         List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),loc.getLongitude(),1);

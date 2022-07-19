@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 public class TerenActivity03 extends AppCompatActivity {
     private String projectStartTime;
-    private String tip;
+    private String FolosintaTeren;
     private String cultura;
     private String tipSol;
     private String suprafata;
@@ -30,11 +32,43 @@ public class TerenActivity03 extends AppCompatActivity {
             actionBar.setTitle("Teren Information");
         }
 
-        // retrieving projhect start time
+        // retrieving project start time
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             projectStartTime = extras.getString("timeStartKEY");
         }
+
+        // setting up spinners
+
+        //get the spinner from the xml.
+        Spinner dropdownTeren = findViewById(R.id.spinnerfolosintateren);
+        ArrayAdapter<CharSequence> adapterteren = ArrayAdapter.createFromResource(this,R.array.folosintaTeren, android.R.layout.simple_spinner_item);
+        dropdownTeren.setAdapter(adapterteren);
+
+        Spinner dropdownCultura = findViewById(R.id.spinnerfolosintateren);
+        ArrayAdapter<CharSequence> adapterCultura = ArrayAdapter.createFromResource(this,R.array.cultura, android.R.layout.simple_spinner_item);
+        dropdownCultura.setAdapter(adapterCultura);
+
+        Spinner downdownSuprafata = findViewById(R.id.spinnerfolosintateren);
+        ArrayAdapter<CharSequence> adapterSuprafata = ArrayAdapter.createFromResource(this,R.array.Suprafata, android.R.layout.simple_spinner_item);
+        downdownSuprafata.setAdapter(adapterSuprafata);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // GOING TO NEXT ACTIVITY
 
@@ -54,7 +88,7 @@ public class TerenActivity03 extends AppCompatActivity {
     // next activity opener
     public void openNextActivity(){
         Intent intent = new Intent(TerenActivity03.this,ZgomotActivity04.class);
-        terenData = new String[] {tip, cultura,tipSol,suprafata,uscat,priza};
+        terenData = new String[] {FolosintaTeren, cultura,tipSol,suprafata,uscat,priza};
 
         intent.putExtra("timeStartKEY",projectStartTime);
         intent.putExtra("terenData", terenData);

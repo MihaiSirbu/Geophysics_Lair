@@ -1,0 +1,61 @@
+Page - Conditii Locatie Teren
+1. FolosintaTeren
+	A. agricol
+	B. pasune
+	C. drum
+	D. necultivat
+	E. lastaris
+	F. padure
+	G. mlastina
+	H. others ##and here, add comment##
+2. Tip cultura
+	A. arat
+	B. discuit
+	B. grau
+	C. porumb
+	D. lucerna
+	E. iarba mica
+	F. iarba inalta
+	G. arbusti mici/boscheti
+	H. others ##and here, add comment##
+3. Tip sol
+	A. afanat
+	B. semi-afanat
+	C. tare
+4. Tip suprafata
+	A. drept
+	B. denivelari mici
+	C. aratura mare
+	D. schimbare de elevatie ##if this is selected, how many meters of change in elevation from start to end of profile#
+5. Umed ##here you can actually put a boolean value)##
+	A. uscat
+	B. umed 
+6. Priza geofoane ##for simplicty - a slider for 5 values???##
+	A. foarte buna
+	B. buna
+	C. medie
+	D. slaba
+	E. foarte proasta
+
+Page - Zgomot
+
+1. Vant ##for simplicty - a slider for 5 values and a number box???##
+	A. slab
+	B. slab-moderat
+	C. moderat
+	D. moderat-puternic
+	E. puternic
+		a)number box for small wind value in Km/h
+		b)number box for highl wind value in Km/h
+2. Trafic ##for simplicty - a slider for 5 values???##
+	A. slab
+	B. slab-moderat
+	C. moderat
+	D. moderat-puternic
+	E. puternic
+3. Alte tipuri de zgomot 
+4. Distanta fata de alte tipuri de zgomot
+
+
+Ultima pagina e buna asa cum e ea
+

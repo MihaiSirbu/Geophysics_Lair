@@ -5,21 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.util.Date;
 
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity01 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Spinner spinner;
     private EditText projectTextNumber;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main01);
     // BAR TITLE
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void openNextActivity(){
-        Intent intent = new Intent(MainActivity.this,AddShot.class);
+        Intent intent = new Intent(MainActivity01.this, AddShot02.class);
 
 
         // Variables to pass unto next activity

@@ -5,63 +5,64 @@
 
     <!--ACTIVITY 1 - OPERATOR INFORMATION ARRAY FOR DROPDOWN MENUS-->
     <string-array name="OperatorNames">
-        <item>John Cena</item>
-        <item>Michael Jackson</item>
-        <item>Bruce Lee</item>
-        <item>Monkey Pa</item>
-        <item>Mister Bear</item>
+        <item>Mishu</item>
+        <item>Adriana</item>
+        <item>Mishi</item>
+        <item>Oana</item>
+        <item>Bogdan</item>
     </string-array>
 
     <!--ACTIVITY 1 - END OF OPERATOR INFORMATION ARRAYS FOR DROPDOWN MENUS-->
 
 
     <!--ACTIVITY 3 - TEREN INFORMATION ARRAYS FOR DROPDOWN MENUS-->
-    <string-array name="Sol">
-        <item>Uscat</item>
-        <item>Michael Jackson</item>
-        <item>Bruce Lee</item>
-        <item>Monkey Pa</item>
-        <item>Mister Bear</item>
+
+    <string-array name="folosintaTeren">
+        <item>agricol</item>
+        <item>pasune</item>
+        <item>drum</item>
+        <item>necultivat</item>
+        <item>lastaris</item>
+        <item>padure</item>
+        <item>mlaastina</item>
     </string-array>
 
-    <string-array name="Cultura">
-        <item>Uscat</item>
-        <item>Michael Jackson</item>
-        <item>Bruce Lee</item>
-        <item>Monkey Pa</item>
-        <item>Mister Bear</item>
+    <string-array name="cultura">
+        <item>arat</item>
+        <item>discuit</item>
+        <item>grau</item>
+        <item>porumb</item>
+        <item>lucerna</item>
+        <item>iarba mica</item>
+        <item>iarba inalta</item>
+        <item>arbusti mici/boscheti</item>
     </string-array>
 
-    <string-array name="TipSol">
-        <item>Uscat</item>
-        <item>Michael Jackson</item>
-        <item>Bruce Lee</item>
-        <item>Monkey Pa</item>
-        <item>Mister Bear</item>
+    <string-array name="sol">
+        <item>afanat</item>
+        <item>semi-afanat</item>
+        <item>tare</item>
+
     </string-array>
 
     <string-array name="Suprafata">
-        <item>Uscat</item>
-        <item>Michael Jackson</item>
-        <item>Bruce Lee</item>
-        <item>Monkey Pa</item>
-        <item>Mister Bear</item>
+        <item>drept</item>
+        <item>denivelari mici</item>
+        <item>aratura mare</item>
+        <item>schimbare de elevatie</item>
     </string-array>
 
     <string-array name="Uscat">
         <item>Uscat</item>
-        <item>Michael Jackson</item>
-        <item>Bruce Lee</item>
-        <item>Monkey Pa</item>
-        <item>Mister Bear</item>
+        <item>Umed</item>
     </string-array>
 
-    <string-array name="Priza">
-        <item>Uscat</item>
-        <item>Michael Jackson</item>
-        <item>Bruce Lee</item>
-        <item>Monkey Pa</item>
-        <item>Mister Bear</item>
+    <string-array name="prizaGeofoane">
+        <item>foarte buna</item>
+        <item>buna</item>
+        <item>medie</item>
+        <item>slaba</item>
+        <item>foarte proasta</item>
     </string-array>
 
 

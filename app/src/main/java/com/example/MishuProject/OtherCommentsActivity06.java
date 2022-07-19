@@ -72,7 +72,7 @@ public class OtherCommentsActivity06 extends AppCompatActivity {
     }
     // next activity opener
     public void openNextActivity(){
-        Intent intent = new Intent(OtherCommentsActivity06.this,MainActivity.class);
+        Intent intent = new Intent(OtherCommentsActivity06.this, MainActivity01.class);
         startActivity(intent);
     }
 }

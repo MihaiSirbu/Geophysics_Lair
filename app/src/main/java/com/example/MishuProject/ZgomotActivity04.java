@@ -24,6 +24,8 @@ public class ZgomotActivity04 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zgomot04);
 
+        // action bar
+
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
@@ -42,9 +44,15 @@ public class ZgomotActivity04 extends AppCompatActivity {
         }
 
 
+
+
+
+
+
         // GOING TO NEXT ACTIVITY
 
         Button NextButton = findViewById(R.id.NextButton);
+
         NextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,11 +68,14 @@ public class ZgomotActivity04 extends AppCompatActivity {
     // next activity opener
     public void openNextActivity(){
         Intent intent = new Intent(ZgomotActivity04.this, ForajActivity05.class);
+
+
         zgomotData = new String[]{vant,trafic};
 
         intent.putExtra("timeStartKEY",projectStartTime);
         intent.putExtra("terenData", terenData);
         intent.putExtra("zgomotData", zgomotData);
+
         startActivity(intent);
     }
 
