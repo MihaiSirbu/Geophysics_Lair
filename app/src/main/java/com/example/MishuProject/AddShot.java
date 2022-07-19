@@ -172,6 +172,7 @@ public class AddShot extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent2page = new Intent(AddShot.this,TerenActivity03.class);
+                intent2page.putExtra("timeStartKEY",projectStartTime);
                 startActivity(intent2page);
             }
         });

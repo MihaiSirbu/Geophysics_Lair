@@ -9,6 +9,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class ZgomotActivity04 extends AppCompatActivity {
+    // taken from activity 3
+    private String projectStartTime;
+    private String[] terenData;
+
+    // Activity 4 zgomot specific
+
+    private String[] zgomotData;
+    private String vant;
+    private String trafic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,15 @@ public class ZgomotActivity04 extends AppCompatActivity {
         }
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+
+        // retrieving projhect start time
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            projectStartTime = extras.getString("timeStartKEY");
+            terenData = extras.getStringArray("terenData");
+
+
+        }
 
 
         // GOING TO NEXT ACTIVITY
@@ -41,7 +59,12 @@ public class ZgomotActivity04 extends AppCompatActivity {
     }
     // next activity opener
     public void openNextActivity(){
-        Intent intent = new Intent(ZgomotActivity04.this,ForacActivity05.class);
+        Intent intent = new Intent(ZgomotActivity04.this, ForajActivity05.class);
+        zgomotData = new String[]{vant,trafic};
+
+        intent.putExtra("timeStartKEY",projectStartTime);
+        intent.putExtra("terenData", terenData);
+        intent.putExtra("zgomotData", zgomotData);
         startActivity(intent);
     }
 

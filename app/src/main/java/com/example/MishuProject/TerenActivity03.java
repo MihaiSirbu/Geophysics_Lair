@@ -9,6 +9,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class TerenActivity03 extends AppCompatActivity {
+    private String projectStartTime;
+    private String tip;
+    private String cultura;
+    private String tipSol;
+    private String suprafata;
+    private String uscat;
+    private String priza;
+
+    String[] terenData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +28,12 @@ public class TerenActivity03 extends AppCompatActivity {
 
         if(actionBar != null){
             actionBar.setTitle("Teren Information");
+        }
+
+        // retrieving projhect start time
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            projectStartTime = extras.getString("timeStartKEY");
         }
 
         // GOING TO NEXT ACTIVITY
@@ -39,6 +54,10 @@ public class TerenActivity03 extends AppCompatActivity {
     // next activity opener
     public void openNextActivity(){
         Intent intent = new Intent(TerenActivity03.this,ZgomotActivity04.class);
+        terenData = new String[] {tip, cultura,tipSol,suprafata,uscat,priza};
+
+        intent.putExtra("timeStartKEY",projectStartTime);
+        intent.putExtra("terenData", terenData);
         startActivity(intent);
     }
 }

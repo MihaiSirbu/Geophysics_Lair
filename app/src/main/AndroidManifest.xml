@@ -20,9 +20,9 @@
         <activity
             android:name="com.example.MishuProject.OtherCommentsActivity06"
             android:exported="false"
-            android:parentActivityName="com.example.MishuProject.ForacActivity05"/>
+            android:parentActivityName="com.example.MishuProject.ForajActivity05"/>
         <activity
-            android:name="com.example.MishuProject.ForacActivity05"
+            android:name="com.example.MishuProject.ForajActivity05"
             android:exported="false"
             android:parentActivityName="com.example.MishuProject.ZgomotActivity04"/>
         <activity
