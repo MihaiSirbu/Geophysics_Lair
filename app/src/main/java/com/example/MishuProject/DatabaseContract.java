@@ -33,10 +33,13 @@ public final class DatabaseContract {
         public static final String COLUMN_STARTTIME="profileStartTime";
 
         //SOL / TEREN
-        public static final String COLUMN_TIP="tip";
+        public static final String COLUMN_FOLOSINTA_TEREN="folosintaTeren";
+        public static final String COLUMN_FOLOSINTA_TEREN_OTHER="folosintaTerenOther";
         public static final String COLUMN_CULTURA="cultura";
-        public static final String COLUMN_TIP_SOL="tipSol";
+        public static final String COLUMN_CULTURA_OTHER="culturaOther";
         public static final String COLUMN_SUPRAFATA="suprafata";
+        public static final String COLUMN_SUPRAFATA_OTHER ="suprafataOther";
+        public static final String COLUMN_TIP_SOL="tipSol";
         public static final String COLUMN_USCAT="uscat";
         public static final String COLUMN_PRIZA="priza";
 

@@ -58,10 +58,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 // SOL TEREN
 
-                DatabaseContract.FormsTABLE.COLUMN_TIP + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN_OTHER + " TEXT, "+
                 DatabaseContract.FormsTABLE.COLUMN_CULTURA + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_CULTURA_OTHER + " TEXT, "+
                 DatabaseContract.FormsTABLE.COLUMN_TIP_SOL + " TEXT, "+
                 DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA + " TEXT, "+
+                DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA_OTHER + " TEXT, "+
                 DatabaseContract.FormsTABLE.COLUMN_USCAT + " TEXT, "+
                 DatabaseContract.FormsTABLE.COLUMN_PRIZA + " TEXT, "+
 
@@ -117,17 +120,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public int addForms(String operator, String profile,String profileST,String tip, String cultura, String tipSol, String suprafata, String uscat, String priza, String vant, String trafic, String localizat, String pichet, String distance, String otherComments){
+    public int addForms(String operator, String profile,String profileST,String folosintaTeren,String folosintaTerenOther, String cultura,String culturaOther, String tipSol, String suprafata,String suprafataOther, String uscat, String priza, String vant, String trafic, String localizat, String pichet, String distance, String otherComments){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_OPERATOR,operator);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PROFILE,profile);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_STARTTIME,profileST);
-        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TIP,tip);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN,folosintaTeren);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN_OTHER,folosintaTerenOther);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_CULTURA,cultura);
-        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TIP_SOL,tipSol);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_CULTURA_OTHER,culturaOther);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA,suprafata);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA_OTHER,suprafataOther);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TIP_SOL,tipSol);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_USCAT,uscat);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PRIZA,priza);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT,vant);

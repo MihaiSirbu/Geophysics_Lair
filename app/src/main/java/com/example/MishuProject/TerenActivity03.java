@@ -18,14 +18,19 @@ import android.widget.Toast;
 public class TerenActivity03 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private String projectStartTime;
     private String FolosintaTeren;
+    private String FolosintaTeren_Other;
     private String cultura;
+    private String cultura_Other;
     private String tipSol;
     private String suprafata;
+    private String suprafata_OtherMeters;
     private String umed;
     private String priza;
 
     private TextView elevationChangeTxtView;
     private EditText elevationmetersEditText;
+    private EditText folosintaTerenEditText;
+    private EditText culturaEditText;
 
 
     Spinner dropdownTeren;
@@ -33,7 +38,7 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
     Spinner dropdownCultura;
 
     Spinner dropdownSuprafata;
-
+    // string array to pass to future activities containing all the data from this activity
     String[] terenData;
 
     @Override
@@ -41,6 +46,7 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teren03);
 
+        // action bar
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
@@ -57,6 +63,9 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
 
         elevationChangeTxtView = findViewById(R.id.textViewifSuprafataSelected);
         elevationmetersEditText = findViewById(R.id.addMetersTExt);
+
+        folosintaTerenEditText = findViewById(R.id.OtherCommentsFolosintaTerenText);
+        culturaEditText = findViewById(R.id.OtherCommentsculturaText);
 
 
 
@@ -121,10 +130,23 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
     // next activity opener
     public void openNextActivity(){
         Intent intent = new Intent(TerenActivity03.this,ZgomotActivity04.class);
+        // getting spinner information -
         FolosintaTeren = dropdownTeren.getSelectedItem().toString();
         cultura = dropdownCultura.getSelectedItem().toString();
         suprafata = dropdownSuprafata.getSelectedItem().toString();
-        terenData = new String[] {FolosintaTeren, cultura,tipSol,suprafata,umed,priza};
+
+        // getting spinner's Other information
+
+        FolosintaTeren_Other = folosintaTerenEditText.getText().toString().trim();
+        cultura_Other = culturaEditText.getText().toString().trim();
+        suprafata_OtherMeters = elevationmetersEditText.getText().toString().trim();
+
+        // rest of data is handled by the radio button functions below
+
+
+
+
+        terenData = new String[] {FolosintaTeren,FolosintaTeren_Other, cultura,cultura_Other,suprafata,suprafata_OtherMeters,tipSol,umed,priza};
 
         intent.putExtra("timeStartKEY",projectStartTime);
         intent.putExtra("terenData", terenData);
