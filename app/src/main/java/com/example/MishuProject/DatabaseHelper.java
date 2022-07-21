@@ -120,7 +120,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public int addForms(String operator, String profile,String profileST,String folosintaTeren,String folosintaTerenOther, String cultura,String culturaOther, String tipSol, String suprafata,String suprafataOther, String uscat, String priza, String vant, String trafic, String localizat, String pichet, String distance, String otherComments){
+    public int addForms(String operator, String profile,String profileST,String folosintaTeren,String folosintaTerenOther, String cultura,String culturaOther, String tipSol, String suprafata,String suprafataOther, String uscat, String priza, String vant, String trafic,String altZgomot,String altZgomotDistance, String localizat, String pichet, String distance, String otherComments){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -137,6 +137,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_USCAT,uscat);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PRIZA,priza);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT,vant);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TRAFIC,trafic);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_ALT_ZGOMOT,altZgomot);
+        contentValues.put(DatabaseContract.FormsTABLE.COLUMN_ALT_ZGOMOT_DISTANCE,altZgomotDistance);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TRAFIC,trafic);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_LOCALIZAT,localizat);
         contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PICHET,pichet);
