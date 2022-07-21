@@ -7,6 +7,8 @@
     tools:context=".TerenActivity03">
 
 
+
+
     <Spinner
         android:id="@+id/spinnerfolosintateren"
         android:layout_width="250dp"
@@ -23,9 +25,9 @@
         android:id="@+id/tipCulturaTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="14dp"
         android:text="Tip Cultura"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.284"
@@ -50,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Folosinta Teren"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.257"
@@ -61,9 +63,9 @@
         android:id="@+id/tipSuprafataTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="14dp"
         android:text="Tip Suprafata"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.304"
@@ -123,7 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Priza Geofoane"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,9 +135,9 @@
         android:id="@+id/tipSolTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="Tip Sol"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
@@ -148,58 +150,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Umed"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7">
-
-        <RadioButton
-            android:id="@+id/foartebunbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClickedPriza"
-
-            android:text="foarte buna" />
-
-        <RadioButton
-            android:id="@+id/bunbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClickedPriza"
-            android:text="buna" />
-
-        <RadioButton
-            android:id="@+id/mediumbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClickedPriza"
-            android:text="medie" />
-
-        <RadioButton
-            android:id="@+id/slabbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClickedPriza"
-            android:text="slaba" />
-
-        <RadioButton
-            android:id="@+id/foarteproastbutton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:onClick="onRadioButtonClickedPriza"
-            android:text="foarte proasta" />
-    </RadioGroup>
 
     <RadioGroup
         android:id="@+id/radioGroup2"
@@ -303,5 +259,28 @@
         app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toEndOf="@+id/spinnertipCultura"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <SeekBar
+        android:id="@+id/SeekbarPrizaGeofoane"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:max="4"
+        android:progress="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PrizaGeofoaneTextViewDisplay" />
+
+    <TextView
+        android:id="@+id/PrizaGeofoaneTextViewDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

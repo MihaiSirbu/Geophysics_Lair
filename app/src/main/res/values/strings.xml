@@ -70,4 +70,16 @@
 
     <!--END OF ACTIVITY 3 - TEREN INFORMATION ARRAYS FOR DROPDOWN MENUS-->
 
+    <!--ACTIVITY 4  - ZGOMOT ARRAY FOR DROPDOWN MENUS-->
+
+    <string-array name="StrengthRanking_WIND_and_TRAFIC">
+        <item>slab</item>
+        <item>slab-moderat</item>
+        <item>moderat</item>
+        <item>moderat-puternic</item>
+        <item>puternic</item>
+    </string-array>
+
+
+
 </resources>

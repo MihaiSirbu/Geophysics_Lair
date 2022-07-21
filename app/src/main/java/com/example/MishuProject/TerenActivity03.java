@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +29,12 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
     private String priza;
 
     private TextView elevationChangeTxtView;
+    private TextView prizaTextViewDisplay;
     private EditText elevationmetersEditText;
     private EditText folosintaTerenEditText;
     private EditText culturaEditText;
+
+    private SeekBar prizaSeekBar;
 
 
     Spinner dropdownTeren;
@@ -88,6 +92,55 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
         dropdownSuprafata.setOnItemSelectedListener(this);
 
         // end of spinners
+
+        // seekbar
+
+        // Trafic seekbar and Textview
+        prizaSeekBar = findViewById(R.id.SeekbarPrizaGeofoane);
+        prizaTextViewDisplay = findViewById(R.id.PrizaGeofoaneTextViewDisplay);
+
+
+
+
+        prizaSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+                switch (i) {
+
+                    case 0:
+                        priza = "foarte proasta";
+                        prizaTextViewDisplay.setText(priza);
+
+                    case 1:
+                        priza = "slaba";
+                        prizaTextViewDisplay.setText(priza);
+
+                    case 2:
+                        priza = "medie";
+                        prizaTextViewDisplay.setText(priza);
+
+                    case 3:
+                        priza = "buna";
+                        prizaTextViewDisplay.setText(priza);
+
+                    case 4:
+                        priza = "foarte buna";
+                        prizaTextViewDisplay.setText(priza);
+                }
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         // radio groups and buttons
 
@@ -213,32 +266,5 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
         }
     }
 
-    public void onRadioButtonClickedPriza(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.foartebunbutton:
-                if (checked)
-                    priza = "foarte buna";
-                break;
-            case R.id.bunbutton:
-                if (checked)
-                    priza = "buna";
-                break;
-            case R.id.mediumbutton:
-                if (checked)
-                    priza = "medie";
-                break;
-            case R.id.slabbutton:
-                if (checked)
-                    priza = "slaba";
-                break;
-            case R.id.foarteproastbutton:
-                if (checked)
-                    priza = "foarte proasta";
-                break;
-        }
-    }
 }
