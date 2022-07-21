@@ -12,8 +12,11 @@ import android.widget.CheckBox;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class ForajActivity05 extends AppCompatActivity {
-    // taken from activity 3
+    //taken from activity 2
+    private String operator;
+    private String profile;
     private String projectStartTime;
+    // taken from activity 3
     private String[] terenData;
 
     // Activity 4 zgomot specific
@@ -54,6 +57,8 @@ public class ForajActivity05 extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             projectStartTime = extras.getString("timeStartKEY");
+            operator = extras.getString("Operator");
+            profile = extras.getString("Profile");
             terenData = extras.getStringArray("terenData");
             zgomotData = extras.getStringArray("zgomotData");
         }
@@ -131,6 +136,8 @@ public class ForajActivity05 extends AppCompatActivity {
         }
 
         intent.putExtra("timeStartKEY",projectStartTime);
+        intent.putExtra("Operator",operator);
+        intent.putExtra("Profile",profile);
         intent.putExtra("terenData", terenData);
         intent.putExtra("zgomotData", zgomotData);
 

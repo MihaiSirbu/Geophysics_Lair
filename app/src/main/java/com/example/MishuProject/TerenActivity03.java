@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 public class TerenActivity03 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private String projectStartTime;
+    private String operator;
+    private String profile;
     private String FolosintaTeren;
     private String FolosintaTeren_Other;
     private String cultura;
@@ -61,6 +63,10 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             projectStartTime = extras.getString("timeStartKEY");
+            operator = extras.getString("Operator");
+            profile = extras.getString("Profile");
+
+
         }
 
         // setting up textview and edittext
@@ -198,10 +204,11 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
 
 
 
+        intent.putExtra("timeStartKEY",projectStartTime);
+        intent.putExtra("Operator",operator);
+        intent.putExtra("Profile",profile);
 
         terenData = new String[] {FolosintaTeren,FolosintaTeren_Other, cultura,cultura_Other,suprafata,suprafata_OtherMeters,tipSol,umed,priza};
-
-        intent.putExtra("timeStartKEY",projectStartTime);
         intent.putExtra("terenData", terenData);
         startActivity(intent);
     }

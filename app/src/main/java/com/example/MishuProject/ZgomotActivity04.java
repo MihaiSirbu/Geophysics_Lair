@@ -16,8 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ZgomotActivity04 extends AppCompatActivity {
-    // taken from activity 3
+    // from activity 2
+    private String profile;
+    private String operator;
     private String projectStartTime;
+    // taken from activity 3
+
     private String[] terenData;
 
     // Activity 4 zgomot specific
@@ -65,6 +69,8 @@ public class ZgomotActivity04 extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             projectStartTime = extras.getString("timeStartKEY");
+            operator = extras.getString("Operator");
+            profile = extras.getString("Profile");
             terenData = extras.getStringArray("terenData");
 
 
@@ -190,6 +196,8 @@ public class ZgomotActivity04 extends AppCompatActivity {
         zgomotData = new String[]{vant,trafic,altZgomot,altZgomot_Distance};
 
         intent.putExtra("timeStartKEY",projectStartTime);
+        intent.putExtra("Operator",operator);
+        intent.putExtra("Profile",profile);
         intent.putExtra("terenData", terenData);
         intent.putExtra("zgomotData", zgomotData);
 

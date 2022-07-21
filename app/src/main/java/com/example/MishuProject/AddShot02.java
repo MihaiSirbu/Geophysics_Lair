@@ -159,6 +159,8 @@ public class AddShot02 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2page = new Intent(AddShot02.this,TerenActivity03.class);
                 intent2page.putExtra("timeStartKEY",projectStartTime);
+                intent2page.putExtra("Operator",operator);
+                intent2page.putExtra("Profile",projectNumber);
                 startActivity(intent2page);
             }
         });

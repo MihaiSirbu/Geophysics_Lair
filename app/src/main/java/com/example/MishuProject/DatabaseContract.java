@@ -45,6 +45,8 @@ public final class DatabaseContract {
 
         // ZGOMOT
         public static final String COLUMN_VANT="vant";
+        public static final String COLUMN_VANT_LOW="vantLow";
+        public static final String COLUMN_VANT_HIGH="vantHigh";
         public static final String COLUMN_TRAFIC="trafic";
         public static final String COLUMN_ALT_ZGOMOT="altZgomot";
         public static final String COLUMN_ALT_ZGOMOT_DISTANCE="altZgomotDistance";
