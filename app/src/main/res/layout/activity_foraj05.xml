@@ -11,7 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
-        android:text="Forac Information Desc."
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="Description of Foraj"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,46 +42,47 @@
         app:layout_constraintTop_toBottomOf="@+id/PageTerenDescription" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/DistanceID"
-
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="Distance"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PichetID"
-        app:counterEnabled="true"
-        app:suffixText="meters"
-        app:counterMaxLength="4">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/DistanceIDTEXT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="4"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
 
         android:id="@+id/PichetID"
-        android:layout_width="409dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:hint="Pichet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LocalizatCheckbox"
+
         app:counterEnabled="true"
-        app:counterMaxLength="4">
+        app:counterMaxLength="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LocalizatCheckbox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PichetIDTEXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="4"/>
+            android:maxLength="4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/DistanceID"
+
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Distance"
+        app:counterEnabled="true"
+        app:counterMaxLength="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PichetID"
+        app:suffixText="meters">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/DistanceIDTEXT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="4" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

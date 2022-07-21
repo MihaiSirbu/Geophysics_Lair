@@ -29,6 +29,8 @@ public class ZgomotActivity04 extends AppCompatActivity {
     private String[] zgomotData;
     List<String> StrengthData;
     private String vant = "moderat";
+    private String vantLow;
+    private String vantHigh;
     private String trafic = "moderat";
     private String altZgomot;
     private String altZgomot_Distance;
@@ -41,10 +43,13 @@ public class ZgomotActivity04 extends AppCompatActivity {
     private SeekBar traficSeekbar;
     private TextView traficTextviewDisplay;
 
-    // 2 edit texts for altzgomot and distance
+    // 2 edit texts for altzgomot and distance and 2 for vant low and high
 
     private EditText altzgomotEditText;
     private EditText altZgomot_DistanceEditText;
+
+    private EditText vantLowEditText;
+    private EditText vantHighEditText;
 
 
     @Override
@@ -160,6 +165,9 @@ public class ZgomotActivity04 extends AppCompatActivity {
         altzgomotEditText = findViewById(R.id.altZgomotEditText1);
         altZgomot_DistanceEditText = findViewById(R.id.AltZgomotDISTANCEeditTExt);
 
+        vantLowEditText = findViewById(R.id.lowWindValueEditText);
+        vantHighEditText = findViewById(R.id.highWindValueEditText);
+
 
 
 
@@ -193,7 +201,9 @@ public class ZgomotActivity04 extends AppCompatActivity {
 
         altZgomot = altzgomotEditText.getText().toString().trim();
         altZgomot_Distance = altZgomot_DistanceEditText.getText().toString().trim();
-        zgomotData = new String[]{vant,trafic,altZgomot,altZgomot_Distance};
+        vantLow = vantLowEditText.getText().toString().trim();
+        vantHigh = vantHighEditText.getText().toString().trim();
+        zgomotData = new String[]{vant,vantLow,vantHigh,trafic,altZgomot,altZgomot_Distance};
 
         intent.putExtra("timeStartKEY",projectStartTime);
         intent.putExtra("Operator",operator);

@@ -58,7 +58,7 @@ public class OtherCommentsActivity06 extends AppCompatActivity {
             terenData = extras.getStringArray("terenData");
             zgomotData = extras.getStringArray("zgomotData");
             localizat = extras.getString("localizat");
-            if(localizat == "yes"){
+            if(localizat.equals("yes")){
                 pichet = extras.getString("pichet");
                 distance = extras.getString("distance");
             }
@@ -116,9 +116,8 @@ public class OtherCommentsActivity06 extends AppCompatActivity {
 
     public void addFormsToDb(ArrayList<String> allFormData){
         DatabaseHelper db = new DatabaseHelper(OtherCommentsActivity06.this);
-        for(int i=0; i<allFormData.size(); i++){
-            db.addForms(i,allFormData.get(i));
-        }
+            db.addForms(All_Collected_Data.get(0),All_Collected_Data.get(1),All_Collected_Data.get(2),All_Collected_Data.get(3),All_Collected_Data.get(4),All_Collected_Data.get(5),All_Collected_Data.get(6),All_Collected_Data.get(7),All_Collected_Data.get(8),All_Collected_Data.get(9),All_Collected_Data.get(10),All_Collected_Data.get(11),All_Collected_Data.get(12),All_Collected_Data.get(13),All_Collected_Data.get(14),All_Collected_Data.get(15),All_Collected_Data.get(16),All_Collected_Data.get(17),All_Collected_Data.get(18),All_Collected_Data.get(19),All_Collected_Data.get(20),All_Collected_Data.get(21));
+
 
 
     }

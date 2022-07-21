@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -31,9 +32,11 @@ public class ForajActivity05 extends AppCompatActivity {
     private String pichet;
     private String distance;
 
-    CheckBox myCheckbox;
-    TextInputLayout Pichet;
-    TextInputLayout Distance;
+    private CheckBox myCheckbox;
+    private TextInputLayout PichetLayout;
+    private TextInputLayout DistanceLayout;
+    private EditText Pichet;
+    private EditText Distance;
 
 
 
@@ -67,8 +70,10 @@ public class ForajActivity05 extends AppCompatActivity {
         // Visibility of Distance and Pichet based on checkbox
 
         myCheckbox = findViewById(R.id.LocalizatCheckbox);
-        Pichet = findViewById(R.id.PichetID);
-        Distance = findViewById(R.id.DistanceID);
+        Pichet = findViewById(R.id.PichetIDTEXT);
+        Distance = findViewById(R.id.DistanceIDTEXT);
+        PichetLayout = findViewById(R.id.PichetID);
+        DistanceLayout = findViewById(R.id.DistanceID);
 
 
         boolean ischecked = myCheckbox.isChecked();
@@ -107,14 +112,14 @@ public class ForajActivity05 extends AppCompatActivity {
     }
     private void changeTextVisibility(boolean isChecked){
         if(isChecked){
-            Pichet.setVisibility(View.VISIBLE);
-            Distance.setVisibility(View.VISIBLE);
+            PichetLayout.setVisibility(View.VISIBLE);
+            DistanceLayout.setVisibility(View.VISIBLE);
             topass = true;
 
         }
         else{
-            Pichet.setVisibility(View.INVISIBLE);
-            Distance.setVisibility(View.INVISIBLE);
+            PichetLayout.setVisibility(View.INVISIBLE);
+            DistanceLayout.setVisibility(View.INVISIBLE);
             topass = false;
 
         }
@@ -127,6 +132,8 @@ public class ForajActivity05 extends AppCompatActivity {
 
         if(topass){
             localizat = "yes";
+            pichet = Pichet.getText().toString().trim();
+            distance = Distance.getText().toString().trim();
             intent.putExtra("pichet", pichet);
             intent.putExtra("distance", distance);
 

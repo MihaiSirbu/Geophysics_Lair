@@ -117,22 +117,27 @@ public class TerenActivity03 extends AppCompatActivity implements AdapterView.On
                     case 0:
                         priza = "foarte proasta";
                         prizaTextViewDisplay.setText(priza);
+                        break;
 
                     case 1:
                         priza = "slaba";
                         prizaTextViewDisplay.setText(priza);
+                        break;
 
                     case 2:
                         priza = "medie";
                         prizaTextViewDisplay.setText(priza);
+                        break;
 
                     case 3:
                         priza = "buna";
                         prizaTextViewDisplay.setText(priza);
+                        break;
 
                     case 4:
                         priza = "foarte buna";
                         prizaTextViewDisplay.setText(priza);
+                        break;
                 }
 
             }

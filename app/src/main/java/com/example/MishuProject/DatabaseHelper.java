@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private Context context;
 
     private static final String DATABASE_NAME = "ProjectDatabaseTest";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
 
 
@@ -121,81 +121,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public int addForms(int indexToAdd, String dataToAdd){
+    public int addForms(String operator, String profile,String profileST,String folosintaTeren,String folosintaTerenOther, String cultura,String culturaOther, String suprafata,String suprafataOther, String tipSol, String uscat, String priza, String vant,String vantLow,String vantHigh, String trafic,String altZgomot,String altZgomotDistance, String localizat, String pichet, String distance, String otherComments) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        //in case needed later
-        //int index,String operator, String profile,String profileST,String folosintaTeren,String folosintaTerenOther, String cultura,String culturaOther, String tipSol, String suprafata,String suprafataOther, String uscat, String priza, String vant,String vantLow,String vantHigh, String trafic,String altZgomot,String altZgomotDistance, String localizat, String pichet, String distance, String otherComments)
 
-        switch(indexToAdd) {
-            case 0:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_OPERATOR,dataToAdd);
-                break;
-            case 1:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PROFILE,dataToAdd);
-                break;
-            case 2:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_STARTTIME,dataToAdd);
-                break;
-            case 3:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN,dataToAdd);
-                break;
-            case 4:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN_OTHER,dataToAdd);
-                break;
-            case 5:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_CULTURA,dataToAdd);
-                break;
-            case 6:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_CULTURA_OTHER,dataToAdd);
-                break;
-            case 7:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA,dataToAdd);
-                break;
-            case 8:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA_OTHER,dataToAdd);
-                break;
-            case 9:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TIP_SOL,dataToAdd);
-                break;
-            case 10:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_USCAT,dataToAdd);
-                break;
-            case 11:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PRIZA,dataToAdd);
-                break;
-            case 12:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT,dataToAdd);
-                break;
-            case 13:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT_LOW,dataToAdd);
-                break;
-            case 14:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT_HIGH,dataToAdd);
-                break;
-            case 15:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TRAFIC,dataToAdd);
-                break;
-            case 16:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_ALT_ZGOMOT,dataToAdd);
-                break;
-            case 17:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_ALT_ZGOMOT_DISTANCE,dataToAdd);
-                break;
-            case 18:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_LOCALIZAT,dataToAdd);
-                break;
-            case 19:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PICHET,dataToAdd);
-                break;
-            case 20:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_DISTANCE,dataToAdd);
-                break;
-            case 21:
-                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_OTHER_COMMENTS,dataToAdd);
-                break;
-        }
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_OPERATOR,operator);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PROFILE,profile);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_STARTTIME,profileST);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN,folosintaTeren);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_FOLOSINTA_TEREN_OTHER,folosintaTerenOther);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_CULTURA,cultura);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_CULTURA_OTHER,culturaOther);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA,suprafata);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_SUPRAFATA_OTHER,suprafataOther);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TIP_SOL,tipSol);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_USCAT,uscat);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PRIZA,priza);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT,vant);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT_LOW,vantLow);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_VANT_HIGH,vantHigh);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_TRAFIC,trafic);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_ALT_ZGOMOT,altZgomot);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_ALT_ZGOMOT_DISTANCE,altZgomotDistance);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_LOCALIZAT,localizat);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_PICHET,pichet);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_DISTANCE,distance);
+                contentValues.put(DatabaseContract.FormsTABLE.COLUMN_OTHER_COMMENTS,otherComments);
 
 
         long result = db.insert(DatabaseContract.FormsTABLE.TABLE_NAME,null,contentValues);
