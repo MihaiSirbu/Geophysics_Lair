@@ -19,23 +19,19 @@
         tools:targetApi="31">
         <activity
             android:name="com.example.MishuProject.OtherCommentsActivity06"
-            android:exported="false"
-            android:parentActivityName="com.example.MishuProject.ForajActivity05"/>
+            android:exported="false" />
         <activity
             android:name="com.example.MishuProject.ForajActivity05"
-            android:exported="false"
-            android:parentActivityName="com.example.MishuProject.ZgomotActivity04"/>
+            android:exported="false" />
         <activity
             android:name="com.example.MishuProject.ZgomotActivity04"
-            android:exported="false"
-            android:parentActivityName="com.example.MishuProject.TerenActivity03"/>
+            android:exported="false" />
         <activity
             android:name="com.example.MishuProject.TerenActivity03"
             android:exported="false" />
         <activity
             android:name="com.example.MishuProject.AddShot02"
             android:exported="false"
-            android:parentActivityName="com.example.MishuProject.MainActivity01"
             />
         <activity
             android:name="com.example.MishuProject.MainActivity01"

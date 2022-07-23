@@ -51,9 +51,9 @@ public class ForajActivity05 extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
-            actionBar.setTitle("Foraj");
+            actionBar.setTitle("Foraj Information");
         }
-        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         //
 
@@ -114,13 +114,13 @@ public class ForajActivity05 extends AppCompatActivity {
         if(isChecked){
             PichetLayout.setVisibility(View.VISIBLE);
             DistanceLayout.setVisibility(View.VISIBLE);
-            topass = true;
+            localizat = "yes";
 
         }
         else{
             PichetLayout.setVisibility(View.INVISIBLE);
             DistanceLayout.setVisibility(View.INVISIBLE);
-            topass = false;
+            localizat = "no";
 
         }
     }
@@ -130,17 +130,6 @@ public class ForajActivity05 extends AppCompatActivity {
 
         // if the box is checked, then we add pichet and distance to our data to transfer
 
-        if(topass){
-            localizat = "yes";
-            pichet = Pichet.getText().toString().trim();
-            distance = Distance.getText().toString().trim();
-            intent.putExtra("pichet", pichet);
-            intent.putExtra("distance", distance);
-
-        }
-        else{
-            localizat = "no";
-        }
 
         intent.putExtra("timeStartKEY",projectStartTime);
         intent.putExtra("Operator",operator);
@@ -149,6 +138,11 @@ public class ForajActivity05 extends AppCompatActivity {
         intent.putExtra("zgomotData", zgomotData);
 
         intent.putExtra("localizat", localizat);
+
+        pichet = Pichet.getText().toString().trim();
+        distance = Distance.getText().toString().trim();
+        intent.putExtra("pichet", pichet);
+        intent.putExtra("distance", distance);
 
 
         startActivity(intent);

@@ -13,8 +13,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
 
-    private static final String DATABASE_NAME = "ProjectDatabaseTest";
-    private static final int DATABASE_VERSION = 3;
+    private static final String DATABASE_NAME = "MishuProjectDatabase";
+    private static final int DATABASE_VERSION = 4;
 
 
 

@@ -65,9 +65,8 @@ public class ZgomotActivity04 extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
-            actionBar.setTitle("Zgomot");
+            actionBar.setTitle("Zgomot Information");
         }
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
         // retrieving project start time

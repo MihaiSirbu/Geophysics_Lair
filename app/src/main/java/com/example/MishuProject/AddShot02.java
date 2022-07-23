@@ -53,9 +53,8 @@ public class AddShot02 extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
-            actionBar.setTitle("AddShot02 Page");
+            actionBar.setTitle("Shot Data Page");
         }
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         // RETRIEVING EXTRAS FROM PREVIOUS ACTIVITY
 

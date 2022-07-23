@@ -46,7 +46,6 @@ public class OtherCommentsActivity06 extends AppCompatActivity {
         if(actionBar != null){
             actionBar.setTitle("Additional Comments");
         }
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
 
