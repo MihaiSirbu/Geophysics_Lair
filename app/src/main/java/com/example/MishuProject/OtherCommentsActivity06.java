@@ -2,9 +2,12 @@ package com.example.MishuProject;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +39,11 @@ public class OtherCommentsActivity06 extends AppCompatActivity {
 
     private ArrayList<String> All_Collected_Data = new ArrayList<String>();
 
+    private String allDataTitles[];
+
+    private RecyclerView myrecyclerView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +54,11 @@ public class OtherCommentsActivity06 extends AppCompatActivity {
         if(actionBar != null){
             actionBar.setTitle("Additional Comments");
         }
+
+        allDataTitles = getResources().getStringArray(R.array.All_CollectedDataTitles);
+
+
+
 
 
 
@@ -83,14 +96,43 @@ public class OtherCommentsActivity06 extends AppCompatActivity {
         All_Collected_Data.add(pichet);
         All_Collected_Data.add(distance);
 
-
-
-
-
-
-        // GOING TO NEXT ACTIVITY
-
         Button NextButton = findViewById(R.id.NextButton);
+
+
+        // recycler view
+
+        myrecyclerView = findViewById(R.id.RecyclerViewp6);
+        RecycleViewAdapter myadapter = new RecycleViewAdapter(this,allDataTitles,All_Collected_Data);
+        myrecyclerView.setAdapter(myadapter);
+        myrecyclerView.setLayoutManager(new LinearLayoutManager(this));
+/*
+        additionalCommentEditText.setOnTouchListener(new View.OnTouchListener()
+                                                     {
+                                                         @Override
+                                                         public boolean onTouch(View view, MotionEvent motionEvent) {
+                                                             if (MotionEvent.ACTION_UP == motionEvent.getAction()) {
+
+
+                                                                     // if true, the text in the EditText is selected
+                                                                     myrecyclerView.setVisibility(View.INVISIBLE);
+                                                                     NextButton.setVisibility(View.INVISIBLE);
+
+                                                         }
+                                                             else{
+
+                                                                 myrecyclerView.setVisibility(View.VISIBLE);
+                                                                 NextButton.setVisibility(View.VISIBLE);
+                                                             }
+                                                             return false;
+                                                     }});*/
+
+
+
+
+
+                // GOING TO NEXT ACTIVITY
+
+
         NextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

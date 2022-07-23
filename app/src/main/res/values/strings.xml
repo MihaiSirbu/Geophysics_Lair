@@ -81,5 +81,30 @@
     </string-array>
 
 
+    <string-array name="All_CollectedDataTitles">
+        <item>Operator</item>
+        <item>Profile</item>
+        <item>Profile Start Time</item>
+        <item>Folosinta Teren</item>
+        <item>Folosinta Teren Other</item>
+        <item>Cultura</item>
+        <item>Cultura Other</item>
+        <item>Suprafata</item>
+        <item>Suprafata Other</item>
+        <item>Tip Sol</item>
+        <item>Uscat</item>
+        <item>Priza</item>
+        <item>Vant</item>
+        <item>Vant Low Value</item>
+        <item>Vant High Value</item>
+        <item>Trafic</item>
+        <item>Alt Zgomot</item>
+        <item>Alt Zgomot Distance</item>
+        <item>Localizat</item>
+        <item>Pichet</item>
+        <item>Distance</item>
+    </string-array>
+
+
 
 </resources>
