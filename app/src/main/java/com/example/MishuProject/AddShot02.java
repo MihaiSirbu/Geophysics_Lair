@@ -152,7 +152,7 @@ public class AddShot02 extends AppCompatActivity {
 
 
         // GO TO NEXT PAGE
-        Button TerenActivityButton = (Button) findViewById(R.id.nextButton);
+        Button TerenActivityButton = (Button) findViewById(R.id.newProjectButton);
         TerenActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -2,6 +2,7 @@
     <string name="app_name">MishuProject</string>
     <string name="button011">mybutton</string>
     <string name="OperatorText">Operator</string>
+    <string name="password">12345abc</string>
 
     <!--ACTIVITY 1 - OPERATOR INFORMATION ARRAY FOR DROPDOWN MENUS-->
     <string-array name="OperatorNames">

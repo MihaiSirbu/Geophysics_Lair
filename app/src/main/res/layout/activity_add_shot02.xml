@@ -7,7 +7,7 @@
     tools:context=".AddShot02">
 
     <Button
-        android:id="@+id/nextButton"
+        android:id="@+id/newProjectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="72dp"
@@ -62,7 +62,7 @@
         android:minWidth="210dp"
         android:minHeight="110dp"
         android:text="Record"
-        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintBottom_toTopOf="@+id/newProjectButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
@@ -94,7 +94,7 @@
         android:text="delete"
         android:textSize="5sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/nextButton"
+        app:layout_constraintEnd_toStartOf="@+id/newProjectButton"
         app:layout_constraintHorizontal_bias="0.284"
         app:layout_constraintStart_toStartOf="parent" />
 

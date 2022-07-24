@@ -34,11 +34,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/OperatorTextView" />
 
+
     <Button
-        android:id="@+id/addShotButton"
+        android:id="@+id/newProjectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="68dp"
         android:clickable="true"
         android:focusable="true"
         android:text="New Project"
@@ -49,7 +50,6 @@
         app:srcCompat="@drawable/add_main"
         tools:ignore="SpeakableTextPresentCheck" />
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ProjectIDLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -58,11 +58,12 @@
         android:hint="Project Number"
         app:counterEnabled="true"
         app:counterMaxLength="5"
-        app:layout_constraintBottom_toTopOf="@+id/addShotButton"
+        app:layout_constraintBottom_toTopOf="@+id/newProjectButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner1"
-        app:layout_constraintVertical_bias="0.144">
+        app:layout_constraintVertical_bias="0.09">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ProjectTextNumber"
@@ -70,6 +71,48 @@
             android:layout_height="wrap_content"
             android:maxLength="5" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProjectIDLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PasswordInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/ValidatePasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Verify Password"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <Button
+        android:id="@+id/ExtractDataToCsvButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Extract Data to Csv"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ValidatePasswordButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
